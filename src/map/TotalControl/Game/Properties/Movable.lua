@@ -1,0 +1,3 @@
+---@class Movable
+---@field setMovementSpeed fun(self: Movable, speed: number)
+---@field getMovementSpeed fun(self: Movable): speed: number

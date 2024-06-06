@@ -1,0 +1,1 @@
+---@class TCSoundInstance: TCGenericSoundInstance

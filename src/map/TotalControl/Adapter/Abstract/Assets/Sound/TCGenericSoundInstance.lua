@@ -1,0 +1,19 @@
+---@class TCGenericSoundInstance
+---@field seek fun(self: TCGenericSoundInstance, ms: integer)
+---@field stop fun(self: TCGenericSoundInstance, instant: boolean?)
+---@field destroy fun(self: TCGenericSoundInstance)
+---@field isPlaying fun(self: TCGenericSoundInstance): boolean
+---@field isLooping fun(self: TCGenericSoundInstance): boolean
+---@field getFadeInRate fun(self: TCGenericSoundInstance): integer
+---@field getFadeOutRate fun(self: TCGenericSoundInstance): integer
+---@field getEnvironment fun(self: TCGenericSoundInstance): TC_SOUND_SETTING
+---@field setPitch fun(self: TCGenericSoundInstance, pitch: number)
+---@field getPitch fun(self: TCGenericSoundInstance)
+---@field setVolume fun(self: TCGenericSoundInstance, volume: percentile)
+---@field getVolume fun(self: TCGenericSoundInstance): percentile
+---@field setChannel fun(self: TCGenericSoundInstance, channel: integer)
+---@field getChannel fun(self: TCGenericSoundInstance): integer
+---@field setDuration fun(self: TCGenericSoundInstance, duration: integer)
+---@field getDuration fun(self: TCGenericSoundInstance): integer
+---@field setDistanceCutoff fun(self: TCGenericSoundInstance, distance: number)
+---@field getDistanceCutoff fun(self: TCGenericSoundInstance): number

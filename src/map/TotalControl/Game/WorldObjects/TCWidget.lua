@@ -1,0 +1,4 @@
+---@class TCWidget: WorldObject
+---@field health number
+---@field maxHealth number
+---@field armorType

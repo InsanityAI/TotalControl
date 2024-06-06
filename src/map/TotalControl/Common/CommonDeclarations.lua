@@ -1,0 +1,11 @@
+---@alias modelPath string
+---@alias soundPath string
+---@alias radians number
+---@alias coordinate number
+---@alias scale number
+---@alias vector number
+-- expected integer value between 0 and 100
+---@alias percentile number
+---@alias integer number
+
+---@alias Animation string|AnimationSequence

@@ -1,0 +1,3 @@
+---@class ManaContainer
+---@field mana number
+---@field maxMana number

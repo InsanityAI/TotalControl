@@ -1,0 +1,15 @@
+---@class TC3DSoundInstance: TCGenericSoundInstance
+---@field setMinMaxDistances fun(self: TC3DSoundInstance, min: number, max: number)
+---@field getMinMaxDistances fun(self: TC3DSoundInstance): min: number, max: number
+---@field setVelocities fun(self: TC3DSoundInstance, x: number, y: number, z: number)
+---@field getVelocities fun(self: TC3DSoundInstance): x:number, y: number, z: number
+---@field setPosition fun(self:TC3DSoundInstance, x: coordinate, y: coordinate, z: coordinate)
+---@field getPosition fun(self: TC3DSoundInstance): x: coordinate, y: coordinate, z: coordinate
+---@field setConeAngles fun(self: TC3DSoundInstance, inside: radians, outside: radians)
+---@field getConeAngles fun(self: TC3DSoundInstance): inside: radians, outside: radians
+---@field setOutsideVolume fun(self: TC3DSoundInstance, volume: percentile)
+---@field getOutsideVolume fun(self: TC3DSoundInstance): percentile
+---@field setConeOrientation fun(self: TC3DSoundInstance, x: vector, y: vector, z: vector)
+---@field getConeOrientation fun(self: TC3DSoundInstance): x: vector, y: vector, z: vector
+---@see https://learn.microsoft.com/en-us/windows/win32/xaudio2/coordinates-of-3d-space
+---@see https://learn.microsoft.com/en-us/windows/win32/xaudio2/sound-cones
