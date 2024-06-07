@@ -1,0 +1,2 @@
+-- Pause execution for an amount of seconds
+---@alias TCSleep fun(seconds: number) 

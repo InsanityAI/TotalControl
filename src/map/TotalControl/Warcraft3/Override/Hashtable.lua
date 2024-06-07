@@ -119,7 +119,7 @@ OnInit.module("TotalControl/Warcraft3/Override/Hashtable", function(require)
     ---@param table MDTable
     ---@param parentKey any
     ---@param childKey any
-    ---@param whichTimer timer
+    ---@param whichTimer TCTimer
     ---@return boolean
     function SaveTimerHandle(table, parentKey, childKey, whichTimer)
         table[TYPES.HANDLE][parentKey][childKey] = whichTimer
@@ -539,7 +539,7 @@ OnInit.module("TotalControl/Warcraft3/Override/Hashtable", function(require)
     ---@param table MDTable
     ---@param parentKey any
     ---@param childKey any
-    ---@return timer
+    ---@return TCTimer
     function LoadTimerHandle(table, parentKey, childKey)
         return table[TYPES.HANDLE][parentKey][childKey]
      end

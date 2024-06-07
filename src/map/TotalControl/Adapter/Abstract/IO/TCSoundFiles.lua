@@ -1,0 +1,2 @@
+---@class TCSoundFiles
+---@field getDuration fun(filePath: soundPath): integer millis

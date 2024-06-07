@@ -1,5 +1,6 @@
 if Debug then Debug.beginFile "TotalControl/Warcraft3/Override/Math" end
 OnInit.module("TotalControl/Warcraft3/Override/Math", function(require)
+    require "TotalControl/Util/MathUtils"
     -- ============================================================================
     --  MathAPI
 
@@ -19,28 +20,6 @@ OnInit.module("TotalControl/Warcraft3/Override/Math", function(require)
     ---@return number
     function Pow(x, power)
         return x ^ power
-    end -- (native)
-
-    --[[
-        from https://stackoverflow.com/a/65552089 Credits Jonathan Cohler
-    ]]
-    function bits() return 1 << 32 == 0 and 32 or 1 << 64 == 0 and 64 end
-
-    --[[
-        From https://stackoverflow.com/a/58411671 credits to Pedro Gimeno
-    ]]
-    local ofs = 2 ^ (bits() == 64 and 52 or 23)
-
-    local int ---@type integer
-    ---@param num number
-    ---@return integer
-    math.round = function(num)
-        if math.abs(num) > ofs then
-            int = math.modf(num)
-        else
-            int = math.modf(num < 0 and num - ofs + ofs or num + ofs - ofs)
-        end
-        return int
     end
 
     MathRound = math.round

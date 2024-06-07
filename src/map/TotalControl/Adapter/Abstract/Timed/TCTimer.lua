@@ -1,0 +1,14 @@
+---@class TCTimer
+---@field getElapsed fun(self: TCTimer): number
+---@field getRemaining fun(self: TCTimer): number
+---@field setTimeout fun(self: TCTimer, timeout: number)
+---@field getTimeout fun(self: TCTimer): number
+---@field setCallback fun(self: TCTimer, callback: fun(...: unknown)?)
+---@field getCallback fun(self: TCTimer): callback: fun(...: unknown)?
+---@field startPeriodic fun(self: TCTimer, ...: unknown)
+---@field startOneshot fun(self: TCTimer, ...: unknown)
+---@field stop fun(self: TCTimer)
+---@field resume fun(self: TCTimer)
+---@field pause fun(self: TCTimer)
+---@field create fun(): TCTimer
+---@field destroy fun(self: TCTimer)

@@ -195,38 +195,38 @@ OnInit.root("Cache", function(require)
     hijackConversionNative("GetLocalizedHotkey")
     hijackConversionNative("ParseTags")
 
-    -- Cache Native Event-Responses
+    if OVERRIDE_NATIVE_EVENT_RESPONSES then
+        -- Cache Native Event-Responses
 
-    ---@param eventResponseGetterFunctionName string
-    ---@return Cache
-    local function hijackNativeEventResponse(eventResponseGetterFunctionName)
-        local cache = Cache.create(_G[eventResponseGetterFunctionName], 1)
-        Hook.add(eventResponseGetterFunctionName, function()
-            return cache:get(coroutine.running())
-        end)
+        ---@param eventResponseGetterFunctionName string
+        ---@return Cache
+        local function hijackNativeEventResponse(eventResponseGetterFunctionName)
+            local cache = Cache.create(_G[eventResponseGetterFunctionName], 1)
+            Hook.add(eventResponseGetterFunctionName, function()
+                return cache:get(coroutine.running())
+            end)
 
-        return cache
-    end
-
-    ---@param eventResponseGetterFunctionName string
-    ---@param ... string invalidatorFunctionNames
-    ---@return Cache
-    local function hijackEditableNativeEventResponse(eventResponseGetterFunctionName, ...)
-        local cache = hijackNativeEventResponse(eventResponseGetterFunctionName)
-
-        local size = select("#", ...)
-        for i = 1, size do
-            ---@param self Hook.property
-            Hook[select("#", i)] = function(self)
-                cache:invalidate(coroutine.running())
-                self.next()
-            end
+            return cache
         end
 
-        return cache
-    end
+        ---@param eventResponseGetterFunctionName string
+        ---@param ... string invalidatorFunctionNames
+        ---@return Cache
+        local function hijackEditableNativeEventResponse(eventResponseGetterFunctionName, ...)
+            local cache = hijackNativeEventResponse(eventResponseGetterFunctionName)
 
-    if OVERRIDE_NATIVE_EVENT_RESPONSES then
+            local size = select("#", ...)
+            for i = 1, size do
+                ---@param self Hook.property
+                Hook[select("#", i)] = function(self)
+                    cache:invalidate(coroutine.running())
+                    self.next()
+                end
+            end
+
+            return cache
+        end
+
         -- would these work? is coroutine different in ForGroup/ForForce?
         hijackNativeEventResponse("GetFilterUnit")
         hijackNativeEventResponse("GetEnumUnit")

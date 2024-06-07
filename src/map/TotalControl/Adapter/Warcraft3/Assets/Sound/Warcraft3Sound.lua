@@ -24,6 +24,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3Sound", func
     ---@param environment TC_SOUND_SETTING
     function Warcraft3Sound.create(filePath, looping, fadeInRate, fadeOutRate, environment)
         local o = setmetatable(Warcraft3Asset.create(filePath), Warcraft3Sound)
+        o:load()
         o.looping = looping
         o.fadeInRate = fadeInRate
         o.fadeOutRate = fadeOutRate

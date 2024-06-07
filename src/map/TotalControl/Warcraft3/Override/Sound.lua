@@ -1,6 +1,5 @@
 if Debug then Debug.beginFile "TotalControl/Warcraft3/Override/Sound" end
 OnInit.module("TotalControl/Warcraft3/Override/Sound", function(require)
-    local SoundNatives = require "TotalControl/Adapter/Warcraft3/Natives/SoundNatives" ---@type SoundNatives
     -- ============================================================================
     --  Sound API
 
@@ -182,9 +181,7 @@ OnInit.module("TotalControl/Warcraft3/Override/Sound", function(require)
     ---@param musicFileName string
     ---@return integer
     function GetSoundFileDuration(musicFileName)
-        -- hmm yes, overriding the native with native itself, smorc
-        -- jk, there's a hooked up cache on SoundNatives method, so it won't call native unless it absolutely has to.
-        return SoundNatives.getFileDuration(musicFileName)
+        return TCSoundFiles.getDuration(musicFileName)
     end
 
     ---@param soundHandle TCGenericSoundInstance
@@ -196,7 +193,8 @@ OnInit.module("TotalControl/Warcraft3/Override/Sound", function(require)
     ---@param soundHandle TCGenericSoundInstance
     ---@return boolean
     function GetSoundIsLoading(soundHandle)
-        return false -- sound loading is ultra fast, doubt we even need this anymore and asset is requested to preload just before creating the sound, doubt we'd have issues because of this.
+         -- sound loading is ultra fast, doubt we even need this anymore and asset is requested to preload just before creating the sound
+        return false
     end
 
     ---@param vgroup volumegroup

@@ -1,5 +1,5 @@
 if Debug then Debug.beginFile "TotalControl/Adapter/Adapter" end
-OnInit.module("TotalControl/Adapter/Adapter", function (require)
+OnInit.main("TotalControl/Adapter/Adapter", function (require)
     -- Main module that controls which adapter to provide
     -- only one require is allowed here, depending on build for whatever game
 
