@@ -38,5 +38,7 @@ OnInit.module("TotalControl/Warcraft3/Override/Timed", function(require)
     function GetExpiredTimer()
         return timerContexts[coroutine.running()]
     end
+
+    TriggerSleepAction = TCSleep
 end)
 if Debug then Debug.endFile() end

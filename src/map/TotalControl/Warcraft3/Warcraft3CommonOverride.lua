@@ -3360,9 +3360,6 @@ OnInit.module("TotalControl/Warcraft3/Warcraft3CommonOverride", function(require
     ---@param whichTrigger trigger
     function TriggerClearActions(whichTrigger) end -- (native)
 
-    ---@param timeout number
-    function TriggerSleepAction(timeout) end -- (native)
-
     ---@param s sound
     ---@param offset number
     function TriggerWaitForSound(s, offset) end -- (native)
