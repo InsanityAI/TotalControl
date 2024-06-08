@@ -2,15 +2,15 @@ if Debug then Debug.beginFile "TotalControl/Adapter/Warcraft3/Natives/TimerNativ
 OnInit.module("TotalControl/Adapter/Warcraft3/Natives/TimerNatives", function(require)
     ---@class TimerNatives
     local TimerNatives = {}
-    TimerNatives.create = CreateTimer
-    TimerNatives.destroy = DestroyTimer
-    TimerNatives.start = TimerStart
-    TimerNatives.getElapsed = TimerGetElapsed
-    TimerNatives.getRemaining = TimerGetRemaining
-    TimerNatives.getTimeout = TimerGetTimeout
-    TimerNatives.pauseTimer = PauseTimer
-    TimerNatives.resumeTimer = ResumeTimer
-    TimerNatives.getExpiredTimer = GetExpiredTimer
+    TimerNatives.Create = CreateTimer
+    TimerNatives.Destroy = DestroyTimer
+    TimerNatives.Start = TimerStart
+    TimerNatives.GetElapsed = TimerGetElapsed
+    TimerNatives.GetRemaining = TimerGetRemaining
+    TimerNatives.GetTimeout = TimerGetTimeout
+    TimerNatives.PauseTimer = PauseTimer
+    TimerNatives.ResumeTimer = ResumeTimer
+    TimerNatives.GetExpiredTimer = GetExpiredTimer
     return TimerNatives
 end)
 if Debug then Debug.endFile() end

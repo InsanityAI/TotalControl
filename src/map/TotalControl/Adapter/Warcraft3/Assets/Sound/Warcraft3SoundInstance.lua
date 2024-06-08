@@ -10,6 +10,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3SoundInstanc
     ---@field protected fadeOutRate number
     ---@field protected environment TC_SOUND_SETTING
     ---@field protected pitch number
+    ---@field protected mustCorrectPitch boolean
     ---@field protected volume percentile
     ---@field protected channel integer
     ---@field protected duration integer?
@@ -21,25 +22,25 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3SoundInstanc
     function Warcraft3SoundInstance:seek(ms)
         if not self:isPlaying() then
             if self.fadeInRate ~= nil then
-                SoundNatives.startEx(self.soundHandle, true)
+                SoundNatives.StartEx(self.soundHandle, true)
             else
-                SoundNatives.start(self.soundHandle)
+                SoundNatives.Start(self.soundHandle)
             end
         end
-        SoundNatives.setPlayPosition(self.soundHandle, ms)
+        SoundNatives.SetPlayPosition(self.soundHandle, ms)
     end
 
     ---@param instant boolean?
     function Warcraft3SoundInstance:stop(instant)
-        SoundNatives.stop(self.soundHandle, false, not instant and self.fadeOutRate ~= 0)
+        SoundNatives.Stop(self.soundHandle, false, not instant and self.fadeOutRate ~= 0)
     end
 
     function Warcraft3SoundInstance:destroy()
         if not self:isPlaying() then
-            SoundNatives.start(self.soundHandle)
-            SoundNatives.stop(self.soundHandle, true, false)
+            SoundNatives.Start(self.soundHandle)
+            SoundNatives.Stop(self.soundHandle, true, false)
         else
-            SoundNatives.killWhenDone(self.soundHandle)
+            SoundNatives.KillWhenDone(self.soundHandle)
         end
     end
 
@@ -48,7 +49,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3SoundInstanc
     end
 
     function Warcraft3SoundInstance:isPlaying()
-        return SoundNatives.isPlaying(self.soundHandle)
+        return SoundNatives.IsPlaying(self.soundHandle)
     end
 
     function Warcraft3SoundInstance:getFadeInRate()
@@ -67,13 +68,15 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3SoundInstanc
     function Warcraft3SoundInstance:setPitch(pitch)
         if pitch == self.pitch then return end
         ---@see https://www.hiveworkshop.com/threads/setsoundpitch-weirdness.215743/#post-2145419
-        if self.pitch ~= 1 then
-            SoundNatives.setPitch(self.soundHandle, 1/self.pitch)
+        if self.mustCorrectPitch then
+            SoundNatives.SetPitch(self.soundHandle, 1/self.pitch)
         end
         if pitch == 1 then
-            SoundNatives.setPitch(self.soundHandle, 1.0001)
+            SoundNatives.SetPitch(self.soundHandle, 1.0001)
+            self.mustCorrectPitch = false
         else 
-            SoundNatives.setPitch(self.soundHandle, pitch)
+            SoundNatives.SetPitch(self.soundHandle, pitch)
+            self.mustCorrectPitch = true
         end
 
         self.pitch = pitch
@@ -85,7 +88,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3SoundInstanc
 
     ---@param volume percentile
     function Warcraft3SoundInstance:setVolume(volume)
-        SoundNatives.setVolume(self.soundHandle, MathUtils.PercentileTo128(volume))
+        SoundNatives.SetVolume(self.soundHandle, MathUtils.PercentileTo128(volume))
         self.volume = volume
     end
 
@@ -95,7 +98,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3SoundInstanc
 
     ---@param channel integer
     function Warcraft3SoundInstance:setChannel(channel)
-        SoundNatives.setChannel(self.soundHandle, channel)
+        SoundNatives.SetChannel(self.soundHandle, channel)
         self.channel = channel
     end
 
@@ -105,20 +108,20 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3SoundInstanc
 
     ---@param duration integer
     function Warcraft3SoundInstance:setDuration(duration)
-        SoundNatives.setDuration(self.soundHandle, duration)
+        SoundNatives.SetDuration(self.soundHandle, duration)
         self.duration = duration
     end
 
     function Warcraft3SoundInstance:getDuration()
         if self.duration ~= nil then
-            self.duration = SoundNatives.getDuration(self.soundHandle)
+            self.duration = SoundNatives.GetDuration(self.soundHandle)
         end
         return self.duration
     end
 
     ---@param distance number
     function Warcraft3SoundInstance:setDistanceCutoff(distance)
-        SoundNatives.setDistanceCutoff(self.soundHandle, distance)
+        SoundNatives.SetDistanceCutoff(self.soundHandle, distance)
         self.distanceCutoff = distance
     end
 

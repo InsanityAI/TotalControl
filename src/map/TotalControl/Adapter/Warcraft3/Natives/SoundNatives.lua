@@ -3,46 +3,47 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/SoundNatives", function (r
     local ConstantCache = require "TotalControl/Adapter/Warcraft/Cache/ConstantCache" ---@type ConstantCache
     ---@class SoundNatives
     local SoundNatives = {}
-    SoundNatives.newSoundEnvironment = NewSoundEnvironment
-    SoundNatives.create = CreateSound
-    SoundNatives.createWithSLKEntry = CreateSoundFilenameWithLabel
-    SoundNatives.createFromLabel = CreateSoundFromLabel
-    SoundNatives.createMIDI = CreateMIDISound
-    SoundNatives.setParamsFromLabel = SetSoundParamsFromLabel
-    SoundNatives.setDistanceCutoff = SetSoundDistanceCutoff
-    SoundNatives.setChannel = SetSoundChannel
-    SoundNatives.setVolume = SetSoundVolume
-    SoundNatives.setPitch = SetSoundPitch
-    SoundNatives.setPlayPosition = SetSoundPlayPosition
-    SoundNatives.setDistances = SetSoundDistances
-    SoundNatives.setConeAngles = SetSoundConeAngles
-    SoundNatives.setConeOrientation = SetSoundConeOrientation
-    SoundNatives.setPosition = SetSoundPosition
-    SoundNatives.setVelocity = SetSoundVelocity
-    SoundNatives.attachToUnit = AttachSoundToUnit
-    SoundNatives.start = StartSound
-    SoundNatives.startEx = StartSoundEx
-    SoundNatives.stop = StopSound
-    SoundNatives.killWhenDone = KillSoundWhenDone
-    SoundNatives.setDuration = SetSoundDuration
-    SoundNatives.getDuration = GetSoundDuration
-    SoundNatives.getFileDuration = GetSoundFileDuration
-    SoundNatives.isPlaying = GetSoundIsPlaying
-    SoundNatives.isLoading = GetSoundIsLoading
-    SoundNatives.registerStacked = RegisterStackedSound
-    SoundNatives.unregisterStacked = UnregisterStackedSound
-    SoundNatives.setFacialAnimationLabel = SetSoundFacialAnimationLabel
-    SoundNatives.setFacialAnimationGroupLabel = SetSoundFacialAnimationGroupLabel
-    SoundNatives.setFacialAnimationFilepath = SetSoundFacialAnimationSetFilepath
-    SoundNatives.setDialogueSpeakerNameKey = SetDialogueSpeakerNameKey
-    SoundNatives.getDialogueSpeakerNameKey = GetDialogueSpeakerNameKey
-    SoundNatives.setDialogueTextKey = SetDialogueTextKey
-    SoundNatives.getDialogueTextKey = GetDialogueTextKey
-    SoundNatives.setVolumeGroupVolume = VolumeGroupSetVolume
-    SoundNatives.resetVolumeGroupVolume = VolumeGroupReset
+    SoundNatives.NewSoundEnvironment = NewSoundEnvironment
+    SoundNatives.Create = CreateSound
+    SoundNatives.CreateWithSLKEntry = CreateSoundFilenameWithLabel
+    SoundNatives.CreateFromLabel = CreateSoundFromLabel
+    SoundNatives.CreateMIDI = CreateMIDISound
+    SoundNatives.SetParamsFromLabel = SetSoundParamsFromLabel
+    SoundNatives.SetDistanceCutoff = SetSoundDistanceCutoff
+    SoundNatives.SetChannel = SetSoundChannel
+    SoundNatives.SetVolume = SetSoundVolume
+    SoundNatives.SetPitch = SetSoundPitch
+    SoundNatives.SetPlayPosition = SetSoundPlayPosition
+    SoundNatives.SetDistances = SetSoundDistances
+    SoundNatives.SetConeAngles = SetSoundConeAngles
+    SoundNatives.SetConeOrientation = SetSoundConeOrientation
+    SoundNatives.SetPosition = SetSoundPosition
+    SoundNatives.SetVelocity = SetSoundVelocity
+    SoundNatives.AttachToUnit = AttachSoundToUnit
+    SoundNatives.Start = StartSound
+    SoundNatives.StartEx = StartSoundEx
+    SoundNatives.Stop = StopSound
+    SoundNatives.KillWhenDone = KillSoundWhenDone
+    SoundNatives.SetDuration = SetSoundDuration
+    SoundNatives.GetDuration = GetSoundDuration
+    SoundNatives.GetFileDuration = GetSoundFileDuration
+    SoundNatives.IsPlaying = GetSoundIsPlaying
+    SoundNatives.IsLoading = GetSoundIsLoading
+    SoundNatives.RegisterStacked = RegisterStackedSound
+    SoundNatives.UnregisterStacked = UnregisterStackedSound
+    SoundNatives.SetFacialAnimationLabel = SetSoundFacialAnimationLabel
+    SoundNatives.SetFacialAnimationGroupLabel = SetSoundFacialAnimationGroupLabel
+    SoundNatives.SetFacialAnimationFilepath = SetSoundFacialAnimationSetFilepath
+    SoundNatives.SetDialogueSpeakerNameKey = SetDialogueSpeakerNameKey
+    SoundNatives.GetDialogueSpeakerNameKey = GetDialogueSpeakerNameKey
+    SoundNatives.SetDialogueTextKey = SetDialogueTextKey
+    SoundNatives.GetDialogueTextKey = GetDialogueTextKey
+    SoundNatives.SetVolumeGroupVolume = VolumeGroupSetVolume
+    SoundNatives.ResetVolumeGroupVolume = VolumeGroupReset
 
     ConstantCache(SoundNatives, "getFileDuration")
 
+    ---@see https://www.hiveworkshop.com/threads/quirks-of-sounds.201362/
     return SoundNatives
 end)
 if Debug then Debug.endFile() end

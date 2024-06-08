@@ -7,6 +7,8 @@ OnInit.module("TotalControl/Warcraft3/Override/Sound", function(require)
     -- ---@param environmentName string
     -- function NewSoundEnvironment(environmentName) end
 
+    ---@alias sound TCGenericSoundInstance
+
     local sound ---@type TCGenericSoundInstance
     ---@param fileName string
     ---@param looping boolean
@@ -181,7 +183,7 @@ OnInit.module("TotalControl/Warcraft3/Override/Sound", function(require)
     ---@param musicFileName string
     ---@return integer
     function GetSoundFileDuration(musicFileName)
-        return TCSoundFiles.getDuration(musicFileName)
+        return TCSoundFiles.GetDuration(musicFileName)
     end
 
     ---@param soundHandle TCGenericSoundInstance

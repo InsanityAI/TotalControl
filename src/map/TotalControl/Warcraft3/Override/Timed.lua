@@ -3,6 +3,8 @@ OnInit.module("TotalControl/Warcraft3/Override/Timed", function(require)
     -- ============================================================================
     --  Timer API
 
+    ---@alias timer TCTimer
+
     local timerContexts = setmetatable({}, {__mode = 'kv'}) ---@type table<thread, TCTimer>
 
     CreateTimer = TCTimer.create

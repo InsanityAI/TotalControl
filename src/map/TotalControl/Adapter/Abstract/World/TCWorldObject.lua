@@ -1,0 +1,13 @@
+---@class TCWorldObject
+--- Visuals
+---@field setModel fun(self: TCWorldObject, modelPath: modelPath)
+---@field getModel fun(self: TCWorldObject): modelPath
+---@field setScales fun(self: TCWorldObject, scaleX: scale?, scaleY: scale?, scaleZ: scale?)
+---@field getScales fun(self: TCWorldObject): scaleX: scale, scaleY: scale, scaleZ: scale
+--- Position and Movement
+---@field setFacingAngles fun(self: TCWorldObject, xyAngle: radians?, xyzAngle: radians?)
+---@field getFacingAngles fun(self: TCWorldObject): xyAngle: radians, xyzAngle: radians
+---@field setPosition fun(self: TCWorldObject, x: coordinate?, y: coordinate?, z: coordinate?)
+---@field getPosition fun(self: TCWorldObject): x: coordinate, y: coordinate, z: coordinate
+--- Animation
+---@field animate fun(self: TCWorldObject, animation: Animation)

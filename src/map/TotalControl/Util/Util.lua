@@ -9,6 +9,9 @@ OnInit.module("TotalControl/Util/Util", function (require)
         return ...
     end
 
+    function Util.NoOp()
+    end
+
     return Util
 end)
 if Debug then Debug.endFile() end

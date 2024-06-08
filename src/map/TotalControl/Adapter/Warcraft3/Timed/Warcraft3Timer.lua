@@ -1,7 +1,6 @@
 if Debug then Debug.beginFile "TotalControl/Adapter/Warcraft3/Timed/Warcraft3Timer" end
 OnInit.module("TotalControl/Adapter/Warcraft3/Timed/Warcraft3Timer", function(require)
     require "TimerQueue" -- lets rely on super awesome TimerQueue instead of natives directly!
-
     local timerWatch = Stopwatch.create(true) ---@type Stopwatch
 
     ---@class Warcraft3Timer: TCTimer
@@ -28,6 +27,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Timed/Warcraft3Timer", function(re
 
     function Warcraft3Timer:destroy()
         self:stop()
+        setmetatable(self, nil)
     end
 
     function Warcraft3Timer:stop()

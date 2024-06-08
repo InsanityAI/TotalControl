@@ -4,17 +4,7 @@
 
 -- ===========================================================================
 
-bj_volumeGroupsTimer = CreateTimer()	---@type timer
 
-bj_queuedExecTimeoutTimer = CreateTimer()	---@type timer
-
-bj_suspendDecayFleshGroup = CreateGroup()	---@type group
-bj_suspendDecayBoneGroup = CreateGroup()	---@type group
-bj_delayedSuspendDecayTimer = CreateTimer()	---@type timer
-
-bj_lastCreatedGroup = CreateGroup()	---@type group
-
-bj_lastStartedTimer = CreateTimer()	---@type timer
 
 -- ***************************************************************************
 --

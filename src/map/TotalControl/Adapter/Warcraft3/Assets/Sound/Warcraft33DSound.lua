@@ -38,34 +38,34 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSound", fu
     ---@param z coordinate
     ---@param seekmillis integer
     function Warcraft33DSound:play(x, y, z, seekmillis)
-        local soundHandle = SoundNatives.create(self.filePath, self.looping, true, false, self.fadeInRate, self.fadeOutRate,
+        local soundHandle = SoundNatives.Create(self.filePath, self.looping, true, false, self.fadeInRate, self.fadeOutRate,
             self.environment) --[[@as sound]]
         if self.pitch ~= nil then
-            SoundNatives.setPitch(soundHandle, self.pitch)
+            SoundNatives.SetPitch(soundHandle, self.pitch)
         end
         if self.volume ~= nil then
-            SoundNatives.setVolume(soundHandle, MathUtils.PercentileTo128(self.volume))
+            SoundNatives.SetVolume(soundHandle, MathUtils.PercentileTo128(self.volume))
         end
         if self.channel ~= nil then
-            SoundNatives.setChannel(soundHandle, self.channel)
+            SoundNatives.SetChannel(soundHandle, self.channel)
         end
         if self.duration ~= nil then
-            SoundNatives.setDuration(soundHandle, self.duration)
+            SoundNatives.SetDuration(soundHandle, self.duration)
         end
         if self.distanceCutoff ~= nil then
-            SoundNatives.setDistanceCutoff(soundHandle, self.distanceCutoff)
+            SoundNatives.SetDistanceCutoff(soundHandle, self.distanceCutoff)
         end
         if self.minDistance ~= nil and self.maxDistance ~= nil then
-            SoundNatives.setDistances(soundHandle, self.minDistance, self.maxDistance)
+            SoundNatives.SetDistances(soundHandle, self.minDistance, self.maxDistance)
         end
         if self.velocityX ~= nil and self.velocityY ~= nil and self.velocityZ ~= nil then
-            SoundNatives.setVelocity(soundHandle, self.velocityX, self.velocityY, self.velocityZ)
+            SoundNatives.SetVelocity(soundHandle, self.velocityX, self.velocityY, self.velocityZ)
         end
         if self.insideConeAngle ~= nil and self.outsideConeAngle ~= nil and self.outsideConeVolume then
-            SoundNatives.setConeAngles(soundHandle, self.insideConeAngle, self.outsideConeAngle, self.outsideConeVolume)
+            SoundNatives.SetConeAngles(soundHandle, self.insideConeAngle, self.outsideConeAngle, self.outsideConeVolume)
         end
         if self.coneOrientationX ~= nil and self.coneOrientationY ~= nil and self.coneOrientationZ ~= nil then
-            SoundNatives.setConeOrientation(soundHandle, self.coneOrientationX, self.coneOrientationY, self.coneOrientationZ)
+            SoundNatives.SetConeOrientation(soundHandle, self.coneOrientationX, self.coneOrientationY, self.coneOrientationZ)
         end
 
         local o = setmetatable({
@@ -74,6 +74,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSound", fu
             fadeOutRate = self.fadeOutRate,
             environment = self.environment,
             pitch = self.pitch or 1,
+            mustCorrectPitch = false,
             volume = self.volume or 100,
             channel = self.channel or 0,
             duration = self.duration,
@@ -95,16 +96,16 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSound", fu
             coneOrientationZ = self.coneOrientationZ
         }, Warcraft33DSoundInstance)
 
-        SoundNatives.setPosition(soundHandle, x, y, z)
+        SoundNatives.SetPosition(soundHandle, x, y, z)
 
         if self.fadeInRate then
-            SoundNatives.startEx(soundHandle, true)
+            SoundNatives.StartEx(soundHandle, true)
         else
-            SoundNatives.start(soundHandle)
+            SoundNatives.Start(soundHandle)
         end
 
         if seekmillis then
-            SoundNatives.setPlayPosition(soundHandle, seekmillis)
+            SoundNatives.SetPlayPosition(soundHandle, seekmillis)
         end
 
         return o

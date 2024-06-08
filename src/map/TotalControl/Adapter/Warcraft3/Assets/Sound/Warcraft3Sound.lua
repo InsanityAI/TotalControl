@@ -35,21 +35,21 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3Sound", func
     ---@param seekmillis integer?
     ---@return Warcraft3SoundInstance
     function Warcraft3Sound:play(seekmillis)
-        local soundHandle = SoundNatives.create(self.filePath, self.looping, false, false, self.fadeInRate, self.fadeOutRate, self.environment) --[[@as sound]]
+        local soundHandle = SoundNatives.Create(self.filePath, self.looping, false, false, self.fadeInRate, self.fadeOutRate, self.environment) --[[@as sound]]
         if self.pitch ~= nil then
-            SoundNatives.setPitch(soundHandle, self.pitch)
+            SoundNatives.SetPitch(soundHandle, self.pitch)
         end
         if self.volume ~= nil then
-            SoundNatives.setVolume(soundHandle, MathUtils.PercentileTo128(self.volume))
+            SoundNatives.SetVolume(soundHandle, MathUtils.PercentileTo128(self.volume))
         end
         if self.channel ~= nil then
-            SoundNatives.setChannel(soundHandle, self.channel)
+            SoundNatives.SetChannel(soundHandle, self.channel)
         end
         if self.duration ~= nil then
-            SoundNatives.setDuration(soundHandle, self.duration)
+            SoundNatives.SetDuration(soundHandle, self.duration)
         end
         if self.distanceCutoff ~= nil then
-            SoundNatives.setDistanceCutoff(soundHandle, self.distanceCutoff)
+            SoundNatives.SetDistanceCutoff(soundHandle, self.distanceCutoff)
         end
         local o = setmetatable({
             looping = self.looping,
@@ -57,6 +57,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3Sound", func
             fadeOutRate = self.fadeOutRate,
             environment = self.environment,
             pitch = self.pitch or 1,
+            mustCorrectPitch = false,
             volume = self.volume or 100,
             channel = self.channel or 0,
             duration = self.duration,
@@ -65,13 +66,13 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft3Sound", func
         }, Warcraft3SoundInstance)
 
         if self.fadeInRate then
-            SoundNatives.startEx(soundHandle, true)
+            SoundNatives.StartEx(soundHandle, true)
         else
-            SoundNatives.start(soundHandle)
+            SoundNatives.Start(soundHandle)
         end
 
         if seekmillis then
-            SoundNatives.setPlayPosition(soundHandle, seekmillis)
+            SoundNatives.SetPlayPosition(soundHandle, seekmillis)
         end
 
         return o

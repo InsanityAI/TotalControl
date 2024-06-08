@@ -6,8 +6,8 @@ OnInit.module("TotalControl/Adapter/Warcraft3/IO/Warcraft3SoundFiles", function(
     local Warcraft3SoundFiles = {}
     Warcraft3SoundFiles.__index = Warcraft3SoundFiles
 
-    function Warcraft3SoundFiles.getDuration(filePath)
-        return SoundNatives.getFileDuration(filePath)
+    function Warcraft3SoundFiles.GetDuration(filePath)
+        return SoundNatives.GetFileDuration(filePath)
     end
 
     return Warcraft3SoundFiles

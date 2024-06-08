@@ -25,7 +25,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSoundInsta
     ---@param min number
     ---@param max number
     function Warcraft33DSoundInstance:setMinMaxDistances(min, max)
-        SoundNatives.setDistances(self.soundHandle, min, max)
+        SoundNatives.SetDistances(self.soundHandle, min, max)
         self.minDistance, self.maxDistance = min, max
     end
 
@@ -37,7 +37,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSoundInsta
     ---@param y vector
     ---@param z vector
     function Warcraft33DSoundInstance:setVelocities(x, y, z)
-        SoundNatives.setVelocity(self.soundHandle, x, y, z)
+        SoundNatives.SetVelocity(self.soundHandle, x, y, z)
         self.velocityX, self.velocityY, self.velocityZ = x, y, z
     end
 
@@ -49,7 +49,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSoundInsta
     ---@param y coordinate
     ---@param z coordinate
     function Warcraft33DSoundInstance:setPosition(x, y, z)
-        SoundNatives.setPosition(self.soundHandle, x, y, z)
+        SoundNatives.SetPosition(self.soundHandle, x, y, z)
         self.x, self.y, self.z = x, y, z
     end
 
@@ -66,7 +66,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSoundInsta
         else
             volume = MathUtils.PercentileTo128(volume)
         end
-        SoundNatives.setConeAngles(self.soundHandle, inside, outside, volume)
+        SoundNatives.SetConeAngles(self.soundHandle, inside, outside, volume)
         self.insideConeAngle, self.outsideConeAngle = inside, outside
     end
 
@@ -76,7 +76,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSoundInsta
 
     ---@param volume percentile
     function Warcraft33DSoundInstance:setOutsideVolume(volume)
-        SoundNatives.setConeAngles(self.soundHandle, self.insideConeAngle, self.outsideConeAngle,
+        SoundNatives.SetConeAngles(self.soundHandle, self.insideConeAngle, self.outsideConeAngle,
             MathUtils.PercentileTo128(volume))
         self.outsideConeVolume = volume
     end
@@ -89,7 +89,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Assets/Sound/Warcraft33DSoundInsta
     ---@param y vector
     ---@param z vector
     function Warcraft33DSoundInstance:setConeOrientation(x, y, z)
-        SoundNatives.setConeOrientation(self.soundHandle, x, y, z)
+        SoundNatives.SetConeOrientation(self.soundHandle, x, y, z)
         self.coneOrientationX, self.coneOrientationY, self.coneOrientationZ = x, y, z
     end
 
