@@ -4,6 +4,8 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/PlayerNatives", function (
     local PlayerNatives = {}
     PlayerNatives.GetPlayer = Player
     PlayerNatives.GetLocalPlayer = GetLocalPlayer
+    PlayerNatives.SetPlayerName = SetPlayerName
+    PlayerNatives.GetPlayerName = GetPlayerName
     PlayerNatives.IsPlayerAlly = IsPlayerAlly
     PlayerNatives.IsPlayerEnemy = IsPlayerEnemy
     PlayerNatives.IsInForce = IsPlayerInForce
@@ -22,6 +24,7 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/PlayerNatives", function (
     PlayerNatives.SetState = SetPlayerState
     PlayerNatives.GetState = GetPlayerState
     PlayerNatives.GetScore = GetPlayerScore
+    PlayerNatives.SetAlliance = SetPlayerAlliance
     PlayerNatives.GetAlliance = GetPlayerAlliance
     PlayerNatives.SetHandicap = SetPlayerHandicap
     PlayerNatives.GetHandicap = GetPlayerHandicap
@@ -33,7 +36,8 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/PlayerNatives", function (
     PlayerNatives.GetPlayerHandicapDamage = GetPlayerHandicapDamage
     PlayerNatives.SetTechMaxAllowed = SetPlayerTechMaxAllowed
     PlayerNatives.GetPlayerTechMaxAllowed = GetPlayerTechMaxAllowed
-    PlayerNatives.AddTechResearched = AddPlayerTechResearched
+    PlayerNatives.IncrementTechResearched = AddPlayerTechResearched
+    PlayerNatives.DecrementTechResearched = BlzDecPlayerTechResearched
     PlayerNatives.SetTechResearched = SetPlayerTechResearched
     PlayerNatives.GetTechResearched = GetPlayerTechResearched
     PlayerNatives.GetTechCount = GetPlayerTechCount
@@ -42,6 +46,28 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/PlayerNatives", function (
     PlayerNatives.SetAbilityAvailable = SetPlayerAbilityAvailable
     PlayerNatives.Remove = RemovePlayer
     PlayerNatives.CacheHeroData = CachePlayerHeroData
+    PlayerNatives.SetColor = SetPlayerColor
+    PlayerNatives.GetColor = GetPlayerColor
+    PlayerNatives.SetTaxRate = SetPlayerTaxRate
+    PlayerNatives.GetTaxRate = GetPlayerTaxRate
+    PlayerNatives.SetPlayers = SetPlayers
+    PlayerNatives.GetPlayers = GetPlayers
+    PlayerNatives.SetRacePreference = SetPlayerRacePreference
+    PlayerNatives.SetRaceSelectable = SetPlayerRaceSelectable
+    PlayerNatives.IsRacePreferenceSet = IsPlayerRacePrefSet
+    PlayerNatives.IsSelectable = GetPlayerSelectable
+    PlayerNatives.SetController = SetPlayerController
+    PlayerNatives.GetController = GetPlayerController
+    PlayerNatives.GetSlotState = GetPlayerSlotState
+    PlayerNatives.SetOnScoreScreen = SetPlayerOnScoreScreen
+    PlayerNatives.SetTeam = SetPlayerTeam
+    PlayerNatives.GetTeam = GetPlayerTeam
+    PlayerNatives.SetStartLocation = SetPlayerStartLocation
+    PlayerNatives.GetStartLocation = GetPlayerStartLocation
+    PlayerNatives.ForceStartLocation = ForcePlayerStartLocation
+    PlayerNatives.GetTournamentScore = GetTournamentScore
+    PlayerNatives.GetTownHallCount = BlzGetPlayerTownHallCount
+    PlayerNatives.CountLivingUnitsOfType = GetPlayerUnitTypeCount
     return PlayerNatives
 end)
 if Debug then Debug.endFile() end

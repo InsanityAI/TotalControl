@@ -1,0 +1,111 @@
+if Debug then Debug.beginFile "TotalControl/Adapter/Warcraft3/Natives/HashtableNatives" end
+OnInit.module("TotalControl/Adapter/Warcraft3/Natives/HashtableNatives", function(require)
+    ---@class HashtableNatives
+    local HashtableNatives = {}
+    HashtableNatives.Create = InitHashtable
+    HashtableNatives.ClearAll = FlushParentHashtable
+    HashtableNatives.ClearForParentKey = FlushChildHashtable
+
+    HashtableNatives.SaveInteger = SaveInteger
+    HashtableNatives.SaveReal = SaveReal
+    HashtableNatives.SaveBoolean = SaveBoolean
+    HashtableNatives.SaveString = SaveStr
+    HashtableNatives.SavePlayer = SavePlayerHandle
+    HashtableNatives.SaveWidget = SaveWidgetHandle
+    HashtableNatives.SaveDestructable = SaveDestructableHandle
+    HashtableNatives.SaveItem = SaveItemHandle
+    HashtableNatives.SaveUnit = SaveUnitHandle
+    HashtableNatives.SaveAbility = SaveAbilityHandle
+    HashtableNatives.SaveTimer = SaveTimerHandle
+    HashtableNatives.SaveTrigger = SaveTriggerHandle
+    HashtableNatives.SaveTriggerCondition = SaveTriggerConditionHandle
+    HashtableNatives.SaveTriggerAction = SaveTriggerActionHandle
+    HashtableNatives.SaveTriggerEvent = SaveTriggerEventHandle
+    HashtableNatives.SavePlayerForce = SaveForceHandle
+    HashtableNatives.SaveUnitGroup = SaveGroupHandle
+    HashtableNatives.SaveLocation = SaveLocationHandle
+    HashtableNatives.SaveRect = SaveRectHandle
+    HashtableNatives.SaveBooleanExpression = SaveBooleanExprHandle
+    HashtableNatives.SaveSound = SaveSoundHandle
+    HashtableNatives.SaveEffect = SaveEffectHandle
+    HashtableNatives.SaveUnitPool = SaveUnitPoolHandle
+    HashtableNatives.SaveItemPool = SaveItemPoolHandle
+    HashtableNatives.SaveQuest = SaveQuestHandle
+    HashtableNatives.SaveQuestItem = SaveQuestItemHandle
+    HashtableNatives.SaveDefeatCondition = SaveDefeatConditionHandle
+    HashtableNatives.SaveTimerDialog = SaveTimerDialogHandle
+    HashtableNatives.SaveLeaderboard = SaveLeaderboardHandle
+    HashtableNatives.SaveMultiboard = SaveMultiboardHandle
+    HashtableNatives.SaveMultiboardItem = SaveMultiboardItemHandle
+    HashtableNatives.SaveTrackable = SaveTrackableHandle
+    HashtableNatives.SaveDialog = SaveDialogHandle
+    HashtableNatives.SaveDialogButton = SaveButtonHandle
+    HashtableNatives.SaveTextTag = SaveTextTagHandle
+    HashtableNatives.SaveLightning = SaveLightningHandle
+    HashtableNatives.SaveImage = SaveImageHandle
+    HashtableNatives.SaveUbersplat = SaveUbersplatHandle
+    HashtableNatives.SaveRegion = SaveRegionHandle
+    HashtableNatives.SaveFogState = SaveFogStateHandle
+    HashtableNatives.SaveFogModifier = SaveFogModifierHandle
+    HashtableNatives.SaveAgent = SaveAgentHandle
+    HashtableNatives.SaveHashtable = SaveHashtableHandle
+    HashtableNatives.SafeFrame = SaveFrameHandle
+
+    HashtableNatives.LoadInteger = LoadInteger
+    HashtableNatives.LoadReal = LoadReal
+    HashtableNatives.LoadBoolean = LoadBoolean
+    HashtableNatives.LoadString = LoadStr
+    HashtableNatives.LoadPlayer = LoadPlayerHandle
+    HashtableNatives.LoadWidget = LoadWidgetHandle
+    HashtableNatives.LoadDestructable = LoadDestructableHandle
+    HashtableNatives.LoadItem = LoadItemHandle
+    HashtableNatives.LoadUnit = LoadUnitHandle
+    HashtableNatives.LoadAbility = LoadAbilityHandle
+    HashtableNatives.LoadTimer = LoadTimerHandle
+    HashtableNatives.LoadTrigger = LoadTriggerHandle
+    HashtableNatives.LoadTriggerCondition = LoadTriggerConditionHandle
+    HashtableNatives.LoadTriggerAction = LoadTriggerActionHandle
+    HashtableNatives.LoadTriggerEvent = LoadTriggerEventHandle
+    HashtableNatives.LoadPlayerForce = LoadForceHandle
+    HashtableNatives.LoadUnitGroup = LoadGroupHandle
+    HashtableNatives.LoadLocation = LoadLocationHandle
+    HashtableNatives.LoadRect = LoadRectHandle
+    HashtableNatives.LoadBooleanExpression = LoadBooleanExprHandle
+    HashtableNatives.LoadSound = LoadSoundHandle
+    HashtableNatives.LoadEffect = LoadEffectHandle
+    HashtableNatives.LoadUnitPool = LoadUnitPoolHandle
+    HashtableNatives.LoadItemPool = LoadItemPoolHandle
+    HashtableNatives.LoadQuest = LoadQuestHandle
+    HashtableNatives.LoadQuestItem = LoadQuestItemHandle
+    HashtableNatives.LoadDefeatCondition = LoadDefeatConditionHandle
+    HashtableNatives.LoadTimerDialog = LoadTimerDialogHandle
+    HashtableNatives.LoadLeaderboard = LoadLeaderboardHandle
+    HashtableNatives.LoadMultiboard = LoadMultiboardHandle
+    HashtableNatives.LoadMultiboardItem = LoadMultiboardItemHandle
+    HashtableNatives.LoadTrackable = LoadTrackableHandle
+    HashtableNatives.LoadDialog = LoadDialogHandle
+    HashtableNatives.LoadDialogButton = LoadButtonHandle
+    HashtableNatives.LoadTextTag = LoadTextTagHandle
+    HashtableNatives.LoadLightning = LoadLightningHandle
+    HashtableNatives.LoadImage = LoadImageHandle
+    HashtableNatives.LoadUbersplat = LoadUbersplatHandle
+    HashtableNatives.LoadRegion = LoadRegionHandle
+    HashtableNatives.LoadFogState = LoadFogStateHandle
+    HashtableNatives.LoadFogModifier = LoadFogModifierHandle
+    HashtableNatives.LoadHashtable = LoadHashtableHandle
+    HashtableNatives.LoadFrame = LoadFrameHandle
+
+    HashtableNatives.HasInteger = HaveSavedInteger
+    HashtableNatives.HasReal = HaveSavedReal
+    HashtableNatives.HasBoolean = HaveSavedBoolean
+    HashtableNatives.HasString = HaveSavedString
+    HashtableNatives.HasHandle = HaveSavedHandle
+
+    HashtableNatives.ClearInteger = RemoveSavedInteger
+    HashtableNatives.ClearReal = RemoveSavedReal
+    HashtableNatives.ClearBoolean = RemoveSavedBoolean
+    HashtableNatives.ClearString = RemoveSavedString
+    HashtableNatives.ClearHandle = RemoveSavedHandle
+    return HashtableNatives
+end)
+if Debug then Debug.endFile() end

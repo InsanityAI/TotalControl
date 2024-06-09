@@ -42,6 +42,7 @@ OnInit.module("TotalControl/Adapter/Wrcraft3/Natives/CameraNatives", function(re
     CameraNatives.ApplySetupWithZ = CameraSetupApplyWithZ
     CameraNatives.ApplySetupForceDuration = CameraSetupApplyForceDuration
     CameraNatives.ApplySetupForceDurationWithZ = CameraSetupApplyForceDurationWithZ
+    CameraNatives.ApplySetupForceDurationSmooth = BlzCameraSetupApplyForceDurationSmooth
     CameraNatives.SetSetupLabel = BlzCameraSetupSetLabel
     CameraNatives.GetSetupLabel = BlzCameraSetupGetLabel
     CameraNatives.SetTargetNoise = CameraSetTargetNoise
