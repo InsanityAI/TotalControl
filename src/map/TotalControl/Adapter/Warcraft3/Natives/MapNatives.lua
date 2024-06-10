@@ -17,6 +17,10 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/MapNatives", function(requ
     MapNatives.SetEnemyStartPointPriority = SetEnemyStartLocPrio
     MapNatives.SetTeams = SetTeams
     MapNatives.GetTeams = GetTeams
+    MapNatives.SetPlayers = SetPlayers
+    MapNatives.GetPlayers = GetPlayers
+    MapNatives.SetPlayerTeam = SetPlayerTeam
+    MapNatives.GetPlayerTeam = GetPlayerTeam
     MapNatives.SetGameTypeSupported = SetGameTypeSupported
     MapNatives.IsGameTypeSupported = IsGameTypeSupported
     MapNatives.GetGameTypeSelected = GetGameTypeSelected

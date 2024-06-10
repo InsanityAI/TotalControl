@@ -50,8 +50,6 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/PlayerNatives", function (
     PlayerNatives.GetColor = GetPlayerColor
     PlayerNatives.SetTaxRate = SetPlayerTaxRate
     PlayerNatives.GetTaxRate = GetPlayerTaxRate
-    PlayerNatives.SetPlayers = SetPlayers
-    PlayerNatives.GetPlayers = GetPlayers
     PlayerNatives.SetRacePreference = SetPlayerRacePreference
     PlayerNatives.SetRaceSelectable = SetPlayerRaceSelectable
     PlayerNatives.IsRacePreferenceSet = IsPlayerRacePrefSet
@@ -60,8 +58,6 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/PlayerNatives", function (
     PlayerNatives.GetController = GetPlayerController
     PlayerNatives.GetSlotState = GetPlayerSlotState
     PlayerNatives.SetOnScoreScreen = SetPlayerOnScoreScreen
-    PlayerNatives.SetTeam = SetPlayerTeam
-    PlayerNatives.GetTeam = GetPlayerTeam
     PlayerNatives.SetStartLocation = SetPlayerStartLocation
     PlayerNatives.GetStartLocation = GetPlayerStartLocation
     PlayerNatives.ForceStartLocation = ForcePlayerStartLocation
