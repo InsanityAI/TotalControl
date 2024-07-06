@@ -4,10 +4,20 @@
 ---@field getModel fun(self: TCWorldObject): modelPath
 ---@field setScales fun(self: TCWorldObject, scaleX: scale?, scaleY: scale?, scaleZ: scale?)
 ---@field getScales fun(self: TCWorldObject): scaleX: scale, scaleY: scale, scaleZ: scale
+---@field setColor fun(self: TCWorldObject, colorRed: integer, colorGreen: integer, colorBlue: integer)
+---@field getColor fun(self: TCWorldObject): colorRed: integer, colorGreen: integer, colorBlue: integer
+---@field setPlayerColor fun(self: TCWorldObject, teamColor: PlayerColor)
+---@field getPlayerColor fun(self: TCWorldObject): PlayerColor
 --- Position and Movement
 ---@field setFacingAngles fun(self: TCWorldObject, xyAngle: radians?, xyzAngle: radians?)
 ---@field getFacingAngles fun(self: TCWorldObject): xyAngle: radians, xyzAngle: radians
 ---@field setPosition fun(self: TCWorldObject, x: coordinate?, y: coordinate?, z: coordinate?)
 ---@field getPosition fun(self: TCWorldObject): x: coordinate, y: coordinate, z: coordinate
 --- Animation
----@field animate fun(self: TCWorldObject, animation: Animation)
+---@field playAnimation fun(self: TCWorldObject, animation: Animation)
+---@field stopAnimation fun(self: TCWorldObject)
+---@field setAnimations fun(self: TCWorldObject, animations: Animation[])
+---@field getAnimations fun(self: TCWorldObject): Animation[]
+---@field getAnimation fun(self: TCWorldObject, index: integer): Animation
+---@field addAnimation fun(self: TCWorldObject, animation: Animation)
+---@field removeAnimation fun(self: TCWorldObject, animation: Animation)

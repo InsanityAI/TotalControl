@@ -1,0 +1,13 @@
+---@class TCWorldObjectBlueprint
+--- Visuals
+---@field setModel fun(self: TCWorldObjectBlueprint, modelPath: modelPath) : TCWorldObjectBlueprint
+---@field getModel fun(self: TCWorldObjectBlueprint): modelPath
+---@field setScales fun(self: TCWorldObjectBlueprint, scaleX: scale?, scaleY: scale?, scaleZ: scale?): TCWorldObjectBlueprint
+---@field getScales fun(self: TCWorldObjectBlueprint): scaleX: scale, scaleY: scale, scaleZ: scale
+---@field setColor fun(self: TCWorldObjectBlueprint, colorRed: integer, colorGreen: integer, colorBlue: integer): TCWorldObjectBlueprint
+---@field getColor fun(self: TCWorldObjectBlueprint): colorRed: integer, colorGreen: integer, colorBlue: integer
+--- Animation
+---@field setAnimations fun(self: TCWorldObjectBlueprint, animations: Animation[]): TCWorldObjectBlueprint
+---@field getAnimations fun(self: TCWorldObjectBlueprint): Animation[]
+---@field addAnimation fun(self: TCWorldObjectBlueprint, animation: Animation): TCWorldObjectBlueprint
+---@field removeAnimation fun(self: TCWorldObjectBlueprint, animation: Animation): TCWorldObjectBlueprint

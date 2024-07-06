@@ -66,6 +66,21 @@ OnInit.module("TotalControl/Adapter/Wrcraft3/Natives/CameraNatives", function(re
     CameraNatives.EndCinematicScene = EndCinematicScene
     CameraNatives.ForceCinematicSubtitles = ForceCinematicSubtitles
     CameraNatives.SetCinematicAudio = SetCinematicAudio
+
+    ---@enum
+    CameraNatives.FIELDS = {
+        TARGET_DISTANCE = CAMERA_FIELD_TARGET_DISTANCE,
+        FARZ = CAMERA_FIELD_FARZ,
+        ANGLE_OF_ATTACK = CAMERA_FIELD_ANGLE_OF_ATTACK,
+        FIELD_OF_VIEW = CAMERA_FIELD_FIELD_OF_VIEW,
+        ROLL = CAMERA_FIELD_ROLL,
+        ROTATION = CAMERA_FIELD_ROTATION,
+        ZOFFSET = CAMERA_FIELD_ZOFFSET,
+        NEARZ = CAMERA_FIELD_NEARZ,
+        LOCAL_PITCH = CAMERA_FIELD_LOCAL_PITCH,
+        LOCAL_YAW = CAMERA_FIELD_LOCAL_YAW,
+        LOCAL_ROLL = CAMERA_FIELD_LOCAL_ROLL
+    }
     return CameraNatives
 end)
 if Debug then Debug.endFile() end

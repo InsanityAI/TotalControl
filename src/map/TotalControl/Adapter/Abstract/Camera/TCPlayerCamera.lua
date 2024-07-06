@@ -1,0 +1,22 @@
+---@class TCPlayerCamera
+---@field stop fun(self: TCPlayerCamera)
+---@field setPosition fun(self: TCPlayerCamera, x: coordinate?, y: coordinate?, z: coordinate?, seconds: number?)
+---@field getPosition fun(self: TCPlayerCamera): x: coordinate, y: coordinate, z: coordinate
+---@field setRotation fun(self: TCPlayerCamera, yaw: radians?, pitch: radians?, roll:radians?, seconds: number?)
+---@field getRotation fun(self: TCPlayerCamera): yaw: radians?, pitch: radians?, roll:radians?
+---@field setTargetRotation fun(self: TCPlayerCamera, rotation: radians?, angleOfAttack: radians?, roll: radians?, seconds: number?)
+---@field getTargetRotation fun(self: TCPlayerCamera): rotation: radians?, angleOfAttack: radians?, roll: radians?
+---@field setFieldOfView fun(self: TCPlayerCamera, fovAngle: radians, seconds: number?)
+---@field getFieldOfView fun(self: TCPlayerCamera): radians
+---@field setCameraNoise fun(self: TCPlayerCamera, magnitude: number, velocity: number)
+---@field getCameraNoise fun(self: TCPlayerCamera): magnitude: number, velocity: number
+---@field setTargetNoise fun(self: TCPlayerCamera, magnitude: number, velocity: number)
+---@field getTargetNoise fun(self: TCPlayerCamera): magnitude: number, velocity: number
+---@field setFocalDistance fun(self: TCPlayerCamera, focalDistance: number)
+---@field getFocalDistance fun(self: TCPlayerCamera): number
+---@field setDepthOfField fun(self: TCPlayerCamera, depth: number)
+---@field getDepthOfField fun(self: TCPlayerCamera): number
+---@field setRenderingDistances fun(self: TCPlayerCamera, far: number?, near: number?, seconds: number?)
+---@field getRenderingDistances fun(self: TCPlayerCamera): far:number, near: number
+---@field setFilter fun(self: TCPlayerCamera, filter: TCCameraFilter, duration: number)
+---@field getFilter fun(self: TCPlayerCamera): TCCameraFilter?

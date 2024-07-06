@@ -8,9 +8,9 @@ OnInit.module("TotalControl/Adapter/Warcraft3/Natives/TimerNatives", function(re
     TimerNatives.GetElapsed = TimerGetElapsed
     TimerNatives.GetRemaining = TimerGetRemaining
     TimerNatives.GetTimeout = TimerGetTimeout
-    TimerNatives.PauseTimer = PauseTimer
-    TimerNatives.ResumeTimer = ResumeTimer
-    TimerNatives.GetExpiredTimer = GetExpiredTimer
+    TimerNatives.Pause = PauseTimer
+    TimerNatives.Resume = ResumeTimer
+    TimerNatives.GetExpired = GetExpiredTimer
     return TimerNatives
 end)
 if Debug then Debug.endFile() end

@@ -1,4 +1,5 @@
 ---@alias modelPath string
+---@alias texturePath string
 ---@alias soundPath string
 ---@alias radians number
 ---@alias coordinate number

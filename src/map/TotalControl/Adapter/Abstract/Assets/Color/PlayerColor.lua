@@ -1,0 +1,2 @@
+---@class PlayerColor
+---@field Get fun(playerId: integer)
